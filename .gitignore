@@ -18,3 +18,17 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+.settings
+
+# IntelliJ/Android Studio Project Files
+.idea/
+*.iml
+*.ipr
+*.iws
+build/
+
+# Gradle files
+.gradle
+
+# MaxOSX files
+.DS_Store
