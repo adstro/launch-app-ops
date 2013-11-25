@@ -28,8 +28,13 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // TODO: Settings.ACTION_APP_OPS_SETTINGS should be used when it is exposed
-        startActivity(new Intent("android.settings.APP_OPS_SETTINGS"));
+        Intent intent = new Intent();
+        intent.setClassName("com.android.settings", "com.android.settings.Settings");
+        intent.setAction(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+        intent.putExtra(":android:show_fragment", "com.android.settings.applications.AppOpsSummary");
+        startActivity(intent);
         finish();
     }
 }
